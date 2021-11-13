@@ -1,40 +1,40 @@
 const cron = require('node-cron');
 const folderWatch = require('./folder-watch');
 
-(async()=> {
+(async () => {
   let watcherInfo = await folderWatch.getWatcherInfo();
-  if(!watcherInfo) {
-    global.task = cron.schedule('* * * * * *', () =>  {
+  if (!watcherInfo) {
+    global.task = cron.schedule('* * * * * *', () => {
       console.log('Waiting for watch instructions...');
     }, {
       scheduled: true
     });
-    
+
     global.task.start();
   } else {
     global.folderToWatch = watcherInfo.folder;
     global.magicword = watcherInfo.magicword;
-    global.task = cron.schedule(watcherInfo.cron, () =>  {
+    global.task = cron.schedule(watcherInfo.cron, () => {
       folderWatch.watchFolder(global.folderToWatch, global.magicword);
     }, {
       scheduled: true
     });
-    
+
     global.task.start();
   }
 })();
 
 const stopCron = () => {
-  try  {
+  try {
     global.task.stop();
-  } catch(e) {
+  } catch (e) {
     throw "Watcher already is in idle state";
   }
 }
 const startCron = () => {
-  try  {
+  try {
     global.task.start();
-  } catch(e) {
+  } catch (e) {
     throw "Watcher already running";
   }
 }
@@ -43,17 +43,17 @@ const updateCron = (folder, cronString, magicword) => {
   try {
     global.task.stop();
     delete global.task;
-  } catch(err) {
-    console.error({err});
+  } catch (err) {
+    console.error({ err });
   }
   global.folderToWatch = folder;
   global.magicword = magicword;
-  global.task = cron.schedule(cronString, () =>  {
+  global.task = cron.schedule(cronString, () => {
     folderWatch.watchFolder(global.folderToWatch, global.magicword);
   }, {
     scheduled: true
   });
-  
+
   global.task.start();
 }
 
