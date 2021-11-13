@@ -8,16 +8,16 @@ const updateWatcher = async (payload) => {
   let watcherData, toRet;
   try {
     watcherData = await Watcher.findOne({});
-    if(!watcherData) {
+    if (!watcherData) {
       toRet = await Watcher.create(payload);
     } else {
-      toRet = await Watcher.findByIdAndUpdate(watcherData._id, _.pick(payload, ["folder", "cron", "magicword"]), {overwrite : true, returnDocument : 'after', new: true})
+      toRet = await Watcher.findByIdAndUpdate(watcherData._id, _.pick(payload, ["folder", "cron", "magicword"]), { overwrite: true, returnDocument: 'after', new: true })
     }
-  
+
     cron.updateCron(payload.folder, payload.cron, payload.magicword);
     return toRet;
-  } catch(e) {
-    console.log({e});
+  } catch (e) {
+    console.log({ e });
     throw e;
   }
 };
@@ -25,13 +25,13 @@ const updateWatcher = async (payload) => {
 const getWatcherStatus = async (payload) => {
 
   try {
-    if(global.folderWatchRunning === true) {
-      return {status : "running"};
+    if (global.folderWatchRunning === true) {
+      return { status: "running" };
     } else {
-      return {status : "idle"};
+      return { status: "idle" };
     }
-  } catch(e) {
-    console.error({e});
+  } catch (e) {
+    console.error({ e });
     throw e;
   }
 };
@@ -40,8 +40,8 @@ const startWatcher = async () => {
   try {
     cron.startCron();
     return "Started successfully";
-  } catch(e) {
-    console.error({e});
+  } catch (e) {
+    console.error({ e });
     throw e;
   }
 };
@@ -50,8 +50,8 @@ const stopWatcher = async () => {
   try {
     cron.stopCron();
     return "Stopped successfully";
-  } catch(e) {
-    console.error({e});
+  } catch (e) {
+    console.error({ e });
     throw e;
   }
 };
@@ -60,10 +60,10 @@ const getWatcherHistory = async () => {
 
   let watcherHistory, toRet;
   try {
-    watcherHistory = await WatchHistory.find({}).sort({"createdAt" : -1}).limit(100);
+    watcherHistory = await WatchHistory.find({}).sort({ "createdAt": -1 }).limit(100);
     return watcherHistory;
-  } catch(e) {
-    console.log({e});
+  } catch (e) {
+    console.log({ e });
     throw e;
   }
 };
