@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "14d5c0e9-0bcf-4120-8a17-7d6555a6899e",
+		"name": "Directory Watcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "update watcher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"*/10 * * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/watcher/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"watcher",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update watcher",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"*/15 * * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/watcher/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"watcher",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-vrujeoXyI9wd6A4b9+VTFdXMFvo\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Nov 2021 03:44:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"*/15 * * * * *\",\n    \"magicword\": \"nesan\",\n    \"id\": \"618e98442e0d75196745ae1c\"\n}"
+				}
+			]
+		},
+		{
+			"name": "watcher status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/watcher/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"watcher",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "watcher status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/watcher/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"watcher",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11-PR74bgtVjgv6YK+KagdnuDHmnVE\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Nov 2021 03:35:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"idle\"\n}"
+				}
+			]
+		},
+		{
+			"name": "start watcher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/watcher/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"watcher",
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "start watcher",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/watcher/start",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"watcher",
+								"start"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-aS6Xt4GyYURS0up1Jw/be1ibp7c\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Nov 2021 03:36:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Started successfully"
+				}
+			]
+		},
+		{
+			"name": "stop watcher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/watcher/stop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"watcher",
+						"stop"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stop watcher",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/watcher/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"watcher",
+								"stop"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-GjoOQ7A+N7+Lo/YNYmVDVI6Fs8U\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Nov 2021 03:36:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Stopped successfully"
+				}
+			]
+		},
+		{
+			"name": "watcher history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/watcher/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"watcher",
+						"history"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "watcher history",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"cron\": \"* * * * *\",\n    \"magicword\" : \"nesan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/watcher/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"watcher",
+								"history"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n  {\n    \"new_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-3.txt\"\n    ],\n    \"deleted_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-2.txt\"\n    ],\n    \"all_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-1.txt\",\n      \"/Users/ecom-nesan.r1/tempo/watch/file-3.txt\"\n    ],\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"magicword\": \"nesan\",\n    \"start_time\": \"2021-11-13T03:38:45.453Z\",\n    \"end_time\": \"2021-11-13T03:38:45.463Z\",\n    \"time_taken_in_ms\": 10,\n    \"count\": 12,\n    \"status\": \"success\",\n    \"error\": \"\",\n    \"id\": \"618f33457689a733b7dd70f2\"\n  },\n  {\n    \"new_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-2.txt\"\n    ],\n    \"deleted_files\": [],\n    \"all_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-1.txt\",\n      \"/Users/ecom-nesan.r1/tempo/watch/file-2.txt\"\n    ],\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"magicword\": \"nesan\",\n    \"start_time\": \"2021-11-13T03:38:45.453Z\",\n    \"end_time\": \"2021-11-13T03:38:45.463Z\",\n    \"time_taken_in_ms\": 10,\n    \"count\": 9,\n    \"status\": \"success\",\n    \"error\": \"\",\n    \"id\": \"618f33457689a733b7dd70f2\"\n  },\n  {\n    \"new_files\": [],\n    \"deleted_files\": [],\n    \"all_files\": [\n      \"/Users/ecom-nesan.r1/tempo/watch/file-1.txt\"\n    ],\n    \"folder\": \"/Users/ecom-nesan.r1/tempo/watch\",\n    \"magicword\": \"nesan\",\n    \"start_time\": \"2021-11-13T03:38:40.439Z\",\n    \"end_time\": \"2021-11-13T03:38:40.450Z\",\n    \"time_taken_in_ms\": 11,\n    \"count\": 6,\n    \"status\": \"success\",\n    \"error\": \"\",\n    \"id\": \"618f33407689a733b7dd70ef\"\n  }\n]"
+				}
+			]
+		}
+	]
+}
