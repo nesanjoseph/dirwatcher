@@ -15,10 +15,12 @@ const envVarsSchema = Joi.object()
 const { value: envVars, error } = envVarsSchema.prefs({ errors: { label: 'key' } }).validate(process.env);
 
 if (error) {
+  console.log({error : `Config validation error: ${error.message}`});
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-console.log({env: process.env})
+console.log({env: JSON.stringify(process.env)});
+console.log({envVars: JSON.stringify(envVars)});
 
 
 module.exports = {
