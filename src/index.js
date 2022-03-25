@@ -7,7 +7,7 @@ dotenv.config({ path: path.join(__dirname, '../../.env.local') });
 const envVarsSchema = Joi.object()
   .keys({
     NODE_ENV: Joi.string().valid('local', 'production', 'development', 'test').required().optional(),
-    PORT: Joi.number().default(3000).optional(),
+    PORT: Joi.number().default(3001).optional(),
     MONGODB_URL: Joi.string().required().description('Mongo DB url').optional()
   })
   .unknown();
@@ -17,6 +17,10 @@ const { value: envVars, error } = envVarsSchema.prefs({ errors: { label: 'key' }
 if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
+
+console.log({config});
+console.log({env: process.env})
+
 
 module.exports = {
   env: 'local',
