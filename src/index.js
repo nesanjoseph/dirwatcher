@@ -1,38 +1,32 @@
-const mongoose = require('mongoose');
-const app = require('./app');
-const config = require('./config/config');
-const logger = require('./config/logger');
+const dotenv = require('dotenv');
+const path = require('path');
+const Joi = require('joi');
+process.NODE_ENV = 'local';
+dotenv.config({ path: path.join(__dirname, '../../.env.local') });
 
-let server;
-mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
-  logger.info('Connected to MongoDB');
-  server = app.listen(config.port, () => {
-    logger.info(`Listening to port ${config.port}`);
-  });
-});
+const envVarsSchema = Joi.object()
+  .keys({
+    NODE_ENV: Joi.string().valid('local', 'production', 'development', 'test').required().optional(),
+    PORT: Joi.number().default(3000).optional(),
+    MONGODB_URL: Joi.string().required().description('Mongo DB url').optional()
+  })
+  .unknown();
 
-const exitHandler = () => {
-  if (server) {
-    server.close(() => {
-      logger.info('Server closed');
-      process.exit(1);
-    });
-  } else {
-    process.exit(1);
+const { value: envVars, error } = envVarsSchema.prefs({ errors: { label: 'key' } }).validate(process.env);
+
+if (error) {
+  throw new Error(`Config validation error: ${error.message}`);
+}
+
+module.exports = {
+  env: 'local',
+  port: 3001,
+  mongoose: {
+    url: process.env.mongo_connection_string,
+    options: {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
   }
 };
-
-const unexpectedErrorHandler = (error) => {
-  logger.error(error);
-  exitHandler();
-};
-
-process.on('uncaughtException', unexpectedErrorHandler);
-process.on('unhandledRejection', unexpectedErrorHandler);
-
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM received');
-  if (server) {
-    server.close();
-  }
-});
