@@ -18,7 +18,6 @@ if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-console.log({config});
 console.log({env: process.env})
 
 
